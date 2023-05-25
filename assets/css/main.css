@@ -7,24 +7,25 @@ body {
 }
 
 .terminal-title {
-  font-family: 'Source Code Pro', monospace;
-  color: #ffffff; /* Set the font color */
+  font-family: 'Roboto', sans-serif;
+  color: #ffffff;
   font-size: 72px; /* Adjust the font size */
   margin-bottom: 10px; /* Add some spacing between the title and subtitle */
+  letter-spacing: 0.1em;
   font-weight: 500;
 }
 
 .terminal-subtitle {
-  font-family: 'Public Sans', sans-serif;
+  font-family: 'Roboto Mono', monospace;
   font-size: 32px; /* Adjust the font size */
-  font-weight: 300;
+  font-weight: 400;
   color: #656565;
 }
 
 .launching-text {
   background-color: #00b4f4;
   color: #ffffff;
-  font-family: 'Public Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 20px; /* Use viewport units for responsive font size */
   padding: 10px 30px 10px 30px;
   border-radius: 10px; /* Add rounded border */
@@ -47,6 +48,7 @@ body {
   .launching-text {
     font-size: 16px; 
   }
+  
 }
 
 /* Small Devices (Tablets) */
@@ -96,3 +98,29 @@ body {
     font-size: 20px; 
   }
 }
+
+/* .terminal-container {
+  display: flex;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  from { border-color: transparent }
+  to { border-color: orange; }
+}
+
+.terminal-text {
+  overflow: hidden;
+  border-right: .2em solid orange;
+  margin-left: 0.2em;
+  white-space: nowrap;
+  font-size: 1.6rem;
+  width: 0;
+  animation: 
+    typing 1.2s steps(20, end) forwards,
+    blink 0.8s infinite;
+} */
