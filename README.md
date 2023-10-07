@@ -1,0 +1,1 @@
+Civic Literacy Initiative website built with [Astro](https://astro.build/) and based on [Astro Theme Cactus](https://github.com/chrismwilliams/astro-theme-cactus)

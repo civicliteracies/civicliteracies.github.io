@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* https://tailwindcss.com/docs/customizing-colors#using-css-variables */
+
+@layer base {
+	/* :root {
+		color-scheme: light;
+		--theme-bg: 0deg 0% 98%;
+		--theme-link: 172deg 18% 41%;
+		--theme-text: 203deg 11% 15%;
+		--theme-accent: 351deg 66% 48%;
+		--theme-accent-2: 0deg 0% 7%;
+		--theme-quote: 351deg 66% 48%;
+	}
+
+	:root.dark {
+		color-scheme: dark;
+		--theme-bg: 210deg 6% 12%;
+		--theme-link: 330deg 49% 67%;
+		--theme-text: 220deg 3% 79%;
+		--theme-accent: 159deg 64% 45%;
+		--theme-accent-2: 0deg 0% 93%;
+		--theme-quote: 102deg 100% 86%;
+	} */
+
+	:root {
+		color-scheme: light;
+		/* bg */
+		--theme-bg: 0deg 90% 100%;
+		/* links, underlines */
+		--theme-link: 235deg 79% 62%;
+		/* text and social links */
+		--theme-text: 0deg 0% 10%;
+		/* home, about, blog navbar */
+		--theme-accent: 197deg 63% 59%;
+		/* headers */
+		--theme-accent-2: 0deg 0% 7%;
+		/* quote in posts */
+		--theme-quote: 351deg 66% 48%;
+	}
+
+	:root.dark {
+		color-scheme: dark;
+		--theme-bg: 215deg 69% 11%;
+		/* cli-main: dark blue #091A31 */
+		--theme-link: 235deg 79% 62%;
+		/* cli-complimentary: purple #505eeb */
+		--theme-text: 0deg 0% 90%;
+		/* cli-main: blue #55b3d9*/
+		--theme-accent: 197deg 63% 59%;
+		--theme-accent-2: 0deg 0% 93%;
+		--theme-quote: 102deg 100% 86%;
+	}
+
+	html {
+		@apply scroll-smooth;
+	}
+
+	html body {
+		@apply mx-auto flex min-h-screen max-w-3xl flex-col bg-bgColor px-8 pt-16 font-mono text-sm font-normal text-textColor antialiased;
+	}
+
+	.cli-text {
+		font-size: x-large;
+		line-height: normal;
+	}
+
+	.cli-color-main-light-blue {
+		color: #55B3D9;
+	}
+
+	.cli-color-comp-light-purple {
+		color: #505eeb;
+	}
+
+	.cli-color-main-blue {
+		color: #55b3d8
+	}
+
+	.cli-color-comp-grey {
+		color: #a3a3a3;
+	}
+
+	.cli-prompt {
+		/* color: #c3c3c3; */
+		background-color: #505eeb;
+		/* Black background color */
+		padding: 2px 20px 0px 20px;
+		/* Add some padding around the prompt */
+	}
+
+	.cli-highlight {
+		/* color: #c3c3c3; */
+		background-color: #55b3d8;
+		/* Black background color */
+		padding: 2px 4px 0px 4px;
+		/* Add some padding around the prompt */
+	}
+
+	/* Define a container for the rows */
+	.cli-container {
+		display: flex;
+		flex-wrap: wrap;
+		/* Allow rows to wrap to the next line */
+	}
+
+	/* Style for each row */
+	.cli-row {
+		display: flex;
+		width: 100%;
+		margin-bottom: 1.5em;
+		/* Add spacing between rows */
+	}
+
+	/* Style for the first column in each row (20% width) */
+	.cli-col1 {
+		flex: 0 0 20%;
+		text-align: right;
+		/* 20% width, no growing or shrinking */
+		/* background-color: #f2f2f2; */
+		/* Gray background for column 1 */
+		padding: 10px;
+	}
+
+	/* Style for the second column in each row (remaining width) */
+	.cli-col2 {
+		flex: 1;
+		/* Take up remaining space */
+		/* background-color: #e0e0e0; */
+		/* Light gray background for column 2 */
+		padding: 10px;
+	}
+}
