@@ -28,11 +28,14 @@
 	:root {
 		color-scheme: light;
 		/* bg */
-		--theme-bg: 0deg 0% 88%;
+		/* --theme-bg: 0deg 0% 88%; */
+		--theme-bg: 30deg 40% 87%;
 		/* links, underlines */
 		--theme-link: 235deg 79% 62%;
 		/* text and social links */
-		--theme-text: 0deg 0% 20%;
+		/* --theme-text: 30deg 70% 15%; */
+		--theme-text: 210deg 100% 16%;
+		/* --theme-text: 215deg 69% 11%; */
 		/* home, about, blog navbar */
 		--theme-accent: 197deg 63% 59%;
 		/* headers */
@@ -89,15 +92,6 @@
 		color: #a3a3a3;
 	}
 
-	.cli-prompt {
-		/* color: #303030; */
-		font-weight: 600;
-		background-color: #505eeb00;
-		/* Black background color */
-		padding: 2px 20px 0px 20px;
-		/* Add some padding around the prompt */
-	}
-
 	.cli-highlight {
 		/* color: #c3c3c3; */
 		/* background-color: #55b3d8; */
@@ -106,49 +100,68 @@
 		/* Add some padding around the prompt */
 	}
 
+	.cli-prompt {
+		/* color: #303030; */
+		font-weight: 600;
+		/* background-color: #505eeb00; */
+	}
+
 	/* Define a container for the rows */
 	.cli-container {
 		display: flex;
 		flex-wrap: wrap;
 		/* Allow rows to wrap to the next line */
 	}
+	
 
 	/* Style for each row */
 	.cli-row {
 		display: flex;
 		width: 100%;
-		margin-bottom: 1.5em;
 		/* Add spacing between rows */
+		margin-bottom: 1.5em;
 	}
 
-	/* Style for the first column in each row (20% width) */
+	/* Style for the first column in each row */
 	.cli-col1 {
-		flex: 0 0 20%;
+		/* grow, shrink, space % */
+		flex: 0 0 14%;
 		text-align: right;
-		/* 20% width, no growing or shrinking */
-		/* background-color: #f2f2f2; */
-		/* Gray background for column 1 */
-		padding: 5px 10px;
+		/* space between colums */
+		margin: 0 2em 0 0;
+		/* space for text inside */
+		padding: 0.25em 0 0 0;
 	}
 
-	/* Media query for small screens (e.g., screens with a max-width of 768px) */
-	@media (max-width: 559px) {
+	@media (max-width: 769px) {
 		/* Change the width to 30% for small screens */
 		.cli-col1 {
-			flex: 0.1 0.1 22%;
-			padding: 5px 5px;
+			flex: 0 0 14%;
 		}
 	}
 
-
-	/* Media query for small screens (e.g., screens with a max-width of 768px) */
-	@media (max-width: 449px) {
+	@media (max-width: 549px) {
 		/* Change the width to 30% for small screens */
 		.cli-col1 {
-			flex: 0.1 0.1 25%;
-			padding: 5px 5px;
+			flex: 0 0 13%;
 		}
 	}
+
+	@media (max-width: 426px) {
+		/* Change the width to 30% for small screens */
+		.cli-col1 {
+			flex: 0 0 15%;
+		}
+	}
+
+	@media (max-width: 321px) {
+		/* Change the width to 30% for small screens */
+		.cli-col1 {
+			flex: 0 0 17%;
+			margin: 0 1.25em 0 0;
+		}
+	}
+
 
 	/* Style for the second column in each row (remaining width) */
 	.cli-col2 {
