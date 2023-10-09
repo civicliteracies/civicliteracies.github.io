@@ -28,11 +28,11 @@
 	:root {
 		color-scheme: light;
 		/* bg */
-		--theme-bg: 0deg 90% 100%;
+		--theme-bg: 0deg 0% 88%;
 		/* links, underlines */
 		--theme-link: 235deg 79% 62%;
 		/* text and social links */
-		--theme-text: 0deg 0% 10%;
+		--theme-text: 0deg 0% 20%;
 		/* home, about, blog navbar */
 		--theme-accent: 197deg 63% 59%;
 		/* headers */
@@ -62,9 +62,15 @@
 		@apply mx-auto flex min-h-screen max-w-3xl flex-col bg-bgColor px-8 pt-16 font-mono text-sm font-normal text-textColor antialiased;
 	}
 
+	/* p {
+		font-family: Roboto, sans-serif;
+	} */
+
 	.cli-text {
-		font-size: x-large;
+		/* font-size: large; */
+		font-weight: 600;
 		line-height: normal;
+		opacity: 0.4;
 	}
 
 	.cli-color-main-light-blue {
@@ -84,8 +90,9 @@
 	}
 
 	.cli-prompt {
-		/* color: #c3c3c3; */
-		background-color: #505eeb;
+		/* color: #303030; */
+		font-weight: 600;
+		background-color: #505eeb00;
 		/* Black background color */
 		padding: 2px 20px 0px 20px;
 		/* Add some padding around the prompt */
@@ -93,9 +100,9 @@
 
 	.cli-highlight {
 		/* color: #c3c3c3; */
-		background-color: #55b3d8;
+		/* background-color: #55b3d8; */
 		/* Black background color */
-		padding: 2px 4px 0px 4px;
+		/* padding: 2px 4px 0px 4px; */
 		/* Add some padding around the prompt */
 	}
 
@@ -131,5 +138,9 @@
 		/* background-color: #e0e0e0; */
 		/* Light gray background for column 2 */
 		padding: 10px;
+		font-family: Roboto, sans-serif;
+		/* font-size: large; */
+		/* font-size: medium; */
 	}
+
 }

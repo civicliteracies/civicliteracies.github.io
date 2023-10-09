@@ -1,5 +1,5 @@
 ---
-import { menuLinks, siteConfig } from "@/site-config";
+// import { menuLinks, siteConfig } from "@/site-config";
 
 const year = new Date().getFullYear();
 ---
@@ -8,10 +8,13 @@ const year = new Date().getFullYear();
 	class="mt-auto flex w-full flex-col items-center justify-center gap-y-2 pb-4 pt-20 text-center align-top text-gray-500 sm:flex-row sm:justify-between sm:text-xs"
 >
 	<div class="me-0 sm:me-4">
-		Copyright &copy; {year}{" "}
-		{siteConfig.author}
+		Copyright &copy; {year} Content under 
+		<a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons BY 4.0</a>
+		<!-- Copyright &copy; {year}{" "}
+		{siteConfig.author} -->
 	</div>
-	<nav
+	<!-- Remove links in footer -->
+	<!-- <nav
 		aria-label="More on this site"
 		class="flex gap-x-2 sm:gap-x-0 sm:divide-x sm:divide-gray-500"
 	>
@@ -25,5 +28,5 @@ const year = new Date().getFullYear();
 				</a>
 			))
 		}
-	</nav>
+	</nav> -->
 </footer>

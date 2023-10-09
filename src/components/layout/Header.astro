@@ -35,12 +35,18 @@ const url = new URL(Astro.request.url);
 	transition:persist
 >
 	<div class="flex sm:flex-col">
-		<a
+		<!-- <a
 			href="/"
 			class="inline-flex items-center grayscale hover:filter-none sm:relative sm:inline-block"
 			aria-current={url.pathname === "/" ? "page" : false}
+		> -->
+		<a
+			href="/"
+			class="inline-flex items-center hover:filter-none sm:relative sm:inline-block"
+			aria-current={url.pathname === "/" ? "page" : false}
 		>
-			<span class="text-xl font-bold sm:text-2xl">Civic Literacy Initiative</span>
+			<img id="header-logo" class="responsive" style="max-height: 48px; margin: 0.5em 0" src="/logo-slim-dark.png">
+			<!-- <span class="text-xl font-bold sm:text-2xl">Civic Literacy Initiative</span> -->
 		</a>
 		<nav
 			id="navigation-menu"
