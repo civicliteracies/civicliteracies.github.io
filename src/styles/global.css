@@ -128,7 +128,26 @@
 		/* 20% width, no growing or shrinking */
 		/* background-color: #f2f2f2; */
 		/* Gray background for column 1 */
-		padding: 10px;
+		padding: 5px 10px;
+	}
+
+	/* Media query for small screens (e.g., screens with a max-width of 768px) */
+	@media (max-width: 559px) {
+		/* Change the width to 30% for small screens */
+		.cli-col1 {
+			flex: 0.1 0.1 22%;
+			padding: 5px 5px;
+		}
+	}
+
+
+	/* Media query for small screens (e.g., screens with a max-width of 768px) */
+	@media (max-width: 449px) {
+		/* Change the width to 30% for small screens */
+		.cli-col1 {
+			flex: 0.1 0.1 25%;
+			padding: 5px 5px;
+		}
 	}
 
 	/* Style for the second column in each row (remaining width) */
@@ -137,7 +156,7 @@
 		/* Take up remaining space */
 		/* background-color: #e0e0e0; */
 		/* Light gray background for column 2 */
-		padding: 10px;
+		padding: 5px 10px;
 		font-family: Roboto, sans-serif;
 		/* font-size: large; */
 		/* font-size: medium; */
