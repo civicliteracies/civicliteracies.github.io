@@ -197,12 +197,15 @@
 	}
 
 	.cli-heading {
-		font-size: 1.5em;
-		font-weight: 500;
+		font-size: 1.6rem;
+		font-weight: 700;
+		line-height: 2rem;
 	}
 
 	.cli-word-slider {
 		color: #00aaf0;
+		font-size: 1.75rem;
+		font-weight: 700;
 	}
 
 	.mb-28 {
@@ -212,16 +215,31 @@
 	.cli-word-slider span {
 		animation-name: fade-in-out;
 		animation-timing-function: ease-in-out;
-		animation-duration: 5s;
+		animation-duration: 4s;
 		-webkit-animation-fill-mode: forwards;
 		-moz-animation-fill-mode: forwards;
 		-ms-animation-fill-mode: forwards;
 		-o-animation-fill-mode: forwards;
 		animation-fill-mode: forwards
 	}
-	
+
 	.cli-word-slider span:not(:first-child) {
 		display: none
 	}
-	
+
+	@keyframes fade-in-out {
+		0% {
+			opacity: 0;
+		}
+		25% {
+			opacity: 1;
+		}
+		75% {
+			opacity: 1;
+		}
+		100% {
+			opacity: 0;
+		}
+	}
+
 }
