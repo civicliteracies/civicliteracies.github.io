@@ -3,52 +3,98 @@ import PageLayout from "@/layouts/Base";
 ---
 
 <PageLayout meta={{ title: "Home" }}>
-    <section>
-        <div class="cli-container">
-        <div class="cli-row">
-            <p class="cli-text"><span>hello@civicliteraci.es</span>:<span class="cli-color-comp-light-purple ">~</span>$ <span style="opacity: 50%">info cli</span></p>
-        </div>
-        <div class="cli-row">
-            <div class="cli-col1">
-                <span class="cli-prompt">what</span>
+	<section>
+		<div class="cli-container">
+            <div class="cli-row mb-28">
+                <span class="cli-heading">Capacity-building with <span class="cli-word-slider cactus-link">
+                    <span style="display: inline-block">care</span>
+                    <span style="display: none">data</span>
+                    <span style="display: none">accountability</span>
+                    <span style="display: none">collaboration</span>
+                    <span style="display: none">lasting impact</span>
+                </span>.</span>
             </div>
-            <div class="cli-col2">
-                <p>We are building the <span class="cli-highlight">next big thing</span> in capacity-building for the civic sector: providing capacity-building with care and bridging the data gap between civic actors and funders.
-                </p>
-            </div>
-        </div>
-        <div class="cli-row">
-            <div class="cli-col1">
-                <span class="cli-prompt">who</span>
-            </div>
-            <div class="cli-col2">
-                <p>CLI is a <span class="cli-highlight">data-driven nonprofit</span> aiming to be the interface to unlocking civic organizations’ potential: we equip both funders and civic organizations in making the best use of data, helping them work better together.</p>
-            </div>
-        </div>
-        <div class="cli-row">
-            <div class="cli-col1">
-                <span class="cli-prompt">how</span>
-            </div>
-            <div class="cli-col2">
-                <p>At the individual level we provide strategic advice and facilitate data literacy activities; at the global level, we build open-source tools and processes that turn short term trainings into lasting change. 
-                <br><br>
-                <span class="cli-highlight">Our first product is ourselves</span>: we are rethinking and sharing publicly what a data-driven non-profit could be; and we are doing so without shying away from the tensions behind our ambition: between speed and inclusion; between measurement and contextualisation; between technology and trust.</p>
-            </div>
-        </div>
-        <div class="cli-row">
-           <div class="cli-col1">
-                <span class="cli-prompt">where</span>
-            </div>
-            <div class="cli-col2">
-                <p>We are bringing together a <span class="cli-highlight">global team</span> to tackle a global challenge.
-                <br><br>
-                Follow our journey on our <a class="cactus-link" href="/blog">blog</a>, with our <span class="cactus-link" >newsletter</span> (coming soon), or <a class="cactus-link" href="mailto:contact@civicliteraci.es">contact us</a>.</p>
-            </div>
-        </div>
-        <!-- <div class="cli-row" style="padding-top: 3em">
+            
+			<div class="cli-row">
+				<p class="cli-text">
+					<span>hello@civicliteraci.es</span>:<span class="cli-color-comp-light-purple">~</span>$ <span
+						style="opacity: 50%">info cli</span>
+				</p>
+			</div>
+			<div class="cli-row">
+				<div class="cli-col1">
+					<span class="cli-prompt">what</span>
+				</div>
+				<div class="cli-col2">
+					<p>
+						We are building the <span class="cli-highlight">next big thing</span> in
+						capacity-building for the civic sector by bridging the data gap between civic actors and
+						funders.
+					</p>
+				</div>
+			</div>
+			<div class="cli-row">
+				<div class="cli-col1">
+					<span class="cli-prompt">who</span>
+				</div>
+				<div class="cli-col2">
+					<p>
+						CLI is a <span class="cli-highlight">data-driven nonprofit</span> aiming to be the
+						interface to unlocking civic organizations’ potential: we equip both funders and civic
+						organizations in making the best use of data, helping them work better together.
+					</p>
+				</div>
+			</div>
+			<div class="cli-row">
+				<div class="cli-col1">
+					<span class="cli-prompt">how</span>
+				</div>
+				<div class="cli-col2">
+					<p>
+						At the individual level we provide strategic advice and facilitate data literacy
+						activities; at the global level, we build open-source tools and processes that turn
+						short term trainings into lasting change.
+						<br /><br />
+						<span class="cli-highlight">Our first product is ourselves</span>: we are rethinking and
+						sharing publicly what a data-driven non-profit could be; and we are doing so without
+						shying away from the tensions behind our ambition: between speed and inclusion; between
+						measurement and contextualisation; between technology and trust.
+					</p>
+				</div>
+			</div>
+			<div class="cli-row">
+				<div class="cli-col1">
+					<span class="cli-prompt">where</span>
+				</div>
+				<div class="cli-col2">
+					<p>
+						We are bringing together a <span class="cli-highlight">global team</span> to tackle a
+						global challenge.
+						<br /><br />
+						 Follow our journey on our <a class="cactus-link" href="/blog">blog</a>, with our <span
+							class="cactus-link">newsletter</span
+						> (coming soon), or <a class="cactus-link" href="mailto:contact@civicliteraci.es"
+							>contact us</a
+						>.
+					</p>
+				</div>
+			</div>
+			<!-- <div class="cli-row" style="padding-top: 3em">
             <p class="cli-text">Follow our journey on our <a class="cactus-link" href="/blog">blog</a>, with our <span class="cactus-link" >newsletter</span> (coming soon), or <a class="cactus-link" href="mailto:contact@civicliteraci.es">contact us</a>.</p>
         </div> -->
-    </div>
-        </p>
-    </section>
+		</div>
+	</section>
 </PageLayout>
+
+<script>
+    const wordSlider = document.querySelector('.cli-word-slider');
+    const options = wordSlider.querySelectorAll('span');
+    let currentIndex = 0;
+
+    setInterval(() => {
+        options[currentIndex].style.display = 'none';
+        currentIndex = (currentIndex + 1) % options.length;
+        options[currentIndex].style.display = 'inline-block';
+    }, 2500); // Change every 2.5 seconds (adjust as needed)
+
+</script>

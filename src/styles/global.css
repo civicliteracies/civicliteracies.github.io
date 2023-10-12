@@ -30,6 +30,7 @@
 		/* bg */
 		/* --theme-bg: 0deg 0% 88%; */
 		--theme-bg: 30deg 40% 87%;
+		/* --theme-bg: 30deg 100% 99%; */
 		/* links, underlines */
 		--theme-link: 235deg 79% 62%;
 		/* text and social links */
@@ -85,7 +86,7 @@
 	}
 
 	.cli-color-main-blue {
-		color: #55b3d8
+		color: #00aaf0
 	}
 
 	.cli-color-comp-grey {
@@ -94,7 +95,7 @@
 
 	.cli-highlight {
 		/* color: #c3c3c3; */
-		/* background-color: #55b3d8; */
+		/* background-color: #00aaf0; */
 		/* Black background color */
 		/* padding: 2px 4px 0px 4px; */
 		/* Add some padding around the prompt */
@@ -112,7 +113,7 @@
 		flex-wrap: wrap;
 		/* Allow rows to wrap to the next line */
 	}
-	
+
 
 	/* Style for each row */
 	.cli-row {
@@ -134,6 +135,7 @@
 	}
 
 	@media (max-width: 769px) {
+
 		/* Change the width to 30% for small screens */
 		.cli-col1 {
 			flex: 0 0 14%;
@@ -141,6 +143,7 @@
 	}
 
 	@media (max-width: 549px) {
+
 		/* Change the width to 30% for small screens */
 		.cli-col1 {
 			flex: 0 0 13%;
@@ -148,6 +151,7 @@
 	}
 
 	@media (max-width: 426px) {
+
 		/* Change the width to 30% for small screens */
 		.cli-col1 {
 			flex: 0 0 15%;
@@ -155,6 +159,7 @@
 	}
 
 	@media (max-width: 321px) {
+
 		/* Change the width to 30% for small screens */
 		.cli-col1 {
 			flex: 0 0 17%;
@@ -175,4 +180,48 @@
 		/* font-size: medium; */
 	}
 
+	@media (min-width: 1439px) {
+
+		.cli-row {
+			font-size: 1.1em;
+			line-height: 1.4rem;
+		}
+	}
+
+	@media (min-width: 2559) {
+
+		.cli-row {
+			font-size: 1.3em;
+			line-height: 1.6rem;
+		}
+	}
+
+	.cli-heading {
+		font-size: 1.5em;
+		font-weight: 500;
+	}
+
+	.cli-word-slider {
+		color: #00aaf0;
+	}
+
+	.mb-28 {
+		margin-bottom: 3rem !important;
+	}
+
+	.cli-word-slider span {
+		animation-name: fade-in-out;
+		animation-timing-function: ease-in-out;
+		animation-duration: 5s;
+		-webkit-animation-fill-mode: forwards;
+		-moz-animation-fill-mode: forwards;
+		-ms-animation-fill-mode: forwards;
+		-o-animation-fill-mode: forwards;
+		animation-fill-mode: forwards
+	}
+	
+	.cli-word-slider span:not(:first-child) {
+		display: none
+	}
+	
 }
