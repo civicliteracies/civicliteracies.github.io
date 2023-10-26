@@ -87,7 +87,7 @@
 	}
 
 	.cli-color-main-blue {
-		color: #00aaf0
+		color: #00aaf0;
 	}
 
 	.cli-color-comp-grey {
@@ -296,5 +296,44 @@
 	/* .text-sm {
 		font-size: 3rem !important;
 	} */
+
+	form.contact-cli input[type="text"], form.contact-cli input[type="email"], form.contact-cli textarea {
+		width: 100%;
+		vertical-align: middle;
+		margin-top: 0.25em;
+		margin-bottom: 0.5em;
+		padding: 0.5em;
+		font-family: Roboto, sans-serif;
+		font-weight: 300;
+		font-size: 0.925em;
+		border-radius: 3px;
+		border-style: solid;
+		border-width: 1px;
+		border-color: #505eeb;
+		/* outline-color: #505eeb; */
+		transition: box-shadow .2s ease;
+	}
+
+	form.contact-cli label {
+		font-size: 0.8em;
+		font-weight: 500;
+		margin-top: 0.2em;
+	}
+
+	form.contact-cli textarea {
+		height: 180px;
+	}
+
+	.cli-btn {
+		background-color: #505eeb; /* Button background color */
+		color: #fff; /* Button text color */
+		padding: 0.5em 1em; /* Button padding */
+		border-radius: 5px; /* Add rounded corners */
+		cursor: pointer; /* Change cursor to pointer on hover */
+	}
+
+	.cli-btn:hover {
+    background-color: #00aaf0; /* Change background color on hover */
+	}
 
 }

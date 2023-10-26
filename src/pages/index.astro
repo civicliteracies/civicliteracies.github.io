@@ -63,8 +63,54 @@ import PageLayout from "@/layouts/Base";
 					<p>
 						We are bringing together a <span class="cli-highlight">global team</span> to tackle a global challenge.
 						<br /><br />
-						 Follow our journey on our <a class="cactus-link" href="/blog">blog</a>, with our <a class="cactus-link">newsletter</a> (coming soon), or <a class="cactus-link" href="mailto:contact@civicliteraci.es">contact us</a
-						>.
+						<!-- Follow our journey on our <a class="cactus-link" href="/blog">blog</a>, with our <a class="cactus-link">newsletter</a> (coming soon), or <a class="cactus-link" href="mailto:contact@civicliteraci.es">contact us</a>. -->
+						Follow our journey on our <a class="cactus-link" href="/blog">blog</a>, with our <a href="#" id="toggle-newsletter" class="cactus-link">newsletter</a>, or <a href="#" id="toggle-contact" class="cactus-link">contact us</a>.
+						<div id="newsletter" class="hidden" style="margin: 1em 0;">
+							<form class="contact-cli" id="newsletter-cli-form" method="POST" action="https://formspree.io/f/xyyqobyn">
+								<fieldset id="fs-frm-inputs">
+									<input type="text" name="name" placeholder="Your name">
+									<input type="email" name="_replyto" placeholder="Your email">
+									<input type="hidden" name="_subject" id="email-subject" value="Newsletter subscription">
+								</fieldset>
+								<button class="cli-btn" type="submit" style="margin-top: 1em"><strong>Subscribe</strong></button>
+							</form>
+							<!-- <form class="contact-cli" id="newsletter-cli-form" method="POST" action="https://formspree.io/f/xyyqobyn">
+								<fieldset id="fs-frm-inputs">
+									<label for="full-name">NAME</label>
+									<input type="text" name="name" id="full-name" placeholder="Your name" required="">
+									<label for="email-address">EMAIL ADDRESS</label>
+									<input type="email" name="_replyto" id="email-address" placeholder="Your email address" required="">
+									<input type="hidden" name="_subject" id="email-subject" value="Newsletter subscription">
+								</fieldset>
+								<button class="cli-btn" type="submit" style="margin-top: 1em"><strong>Subscribe</strong></button>
+							</form> -->
+						</div>
+						<div id="contact" class="hidden" style="margin: 1em 0;">
+							<form class="contact-cli" id="contact-cli-form" method="POST" action="https://formspree.io/f/mrgwjogg">
+								<fieldset id="fs-frm-inputs">
+									<input type="text" name="name" placeholder="Your name">
+									<input type="email" name="_replyto" placeholder="Your email">
+									<input type="text" name="organization" placeholder="Your organization">
+									<textarea name="message" placeholder="Your message"></textarea>
+									<input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
+								</fieldset>
+								<button class="cli-btn" type="submit" style="margin-top: 1em"><strong>Send the message</strong></button>
+							</form>
+							<!-- <form class="contact-cli" id="contact-cli-form" method="POST" action="https://formspree.io/f/mrgwjogg">
+								<fieldset id="fs-frm-inputs">
+									<label for="full-name">NAME</label>
+									<input type="text" name="name" id="full-name" placeholder="Your name" required="">
+									<label for="email-address">EMAIL ADDRESS</label>
+									<input type="email" name="_replyto" id="email-address" placeholder="Your email address" required="">
+									<label for="organization">ORGANIZATION</label>
+									<input type="text" name="name" id="organization" placeholder="Your organization" required="">
+									<label for="message">MESSAGE</label>
+									<textarea rows="5" name="message" id="message" placeholder="Your message" required=""></textarea>
+									<input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
+								</fieldset>
+								<button class="cli-btn" type="submit" style="margin-top: 1em"><strong>Send the message</strong></button>
+							</form> -->
+						</div>
 					</p>
 				</div>
 			</div>
@@ -86,4 +132,31 @@ import PageLayout from "@/layouts/Base";
         options[currentIndex].style.display = 'inline-block';
     }, 4000); // Change every 2.5 seconds (adjust as needed)
 
+</script>
+
+<script>
+document.getElementById("toggle-contact").addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent the link from navigating
+
+	var newsletterDiv = document.getElementById("newsletter");
+    newsletterDiv.classList.add("hidden");
+    var contactDiv = document.getElementById("contact");
+    contactDiv.classList.toggle("hidden");
+});
+
+document.getElementById("toggle-newsletter").addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent the link from navigating
+
+    var newsletterDiv = document.getElementById("newsletter");
+    newsletterDiv.classList.toggle("hidden");
+	var contactDiv = document.getElementById("contact");
+    contactDiv.classList.add("hidden");
+})
+
+<script>
+window.onbeforeunload = () => {
+  for(const form of document.getElementsByClassName('contact-cli')) {
+    form.reset();
+  }
+}
 </script>
