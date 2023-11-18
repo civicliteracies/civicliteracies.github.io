@@ -1,0 +1,45 @@
+---
+import PageLayout from "@/layouts/Base";
+---
+
+<PageLayout meta={{ title: "Home" }}>
+	<section>
+		<div class="cli-container">
+            <div class="cli-row mb-28">
+                <span class="cli-heading">Capacity-building <span class="cli-word-slider">
+                    <span style="display: inline-block">with care</span>
+                    <span style="display: none">with accountability</span>
+                    <span style="display: none">with visibility</span>
+                    <span style="display: none">with collaboration</span>
+                    <span style="display: none">with lasting impact</span>
+                    <span style="display: none">reinvented</span>
+                </span></span>
+            </div>
+            Join our newsletter!
+		</div>
+        <div id="newsletter" style="margin: 1em 0;">
+            <form class="contact-cli" id="newsletter-cli-form" method="POST" action="https://formspree.io/f/xyyqobyn">
+                <fieldset id="fs-frm-inputs">
+                    <input type="text" name="name" placeholder="Your name">
+                    <input type="email" name="_replyto" placeholder="Your email">
+                    <input type="hidden" name="_subject" id="email-subject" value="Newsletter subscription">
+                </fieldset>
+                <button class="cli-btn" type="submit" style="margin-top: 1em"><strong>Join</strong></button>
+            </form>
+        </div>
+	</section>
+</PageLayout>
+
+<script>
+    const wordSlider = document.querySelector('.cli-word-slider');
+    const options = wordSlider.querySelectorAll('span');
+    let currentIndex = 0;
+
+    setInterval(() => {
+        options[currentIndex].style.display = 'none';
+        currentIndex = (currentIndex + 1) % options.length;
+        options[currentIndex].style.display = 'inline-block';
+    }, 4000); // Change every 2.5 seconds (adjust as needed)
+
+</script>
+
