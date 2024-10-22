@@ -43,6 +43,7 @@
 		--theme-accent-2: 0deg 0% 7%;
 		/* quote in posts */
 		--theme-quote: 351deg 66% 48%;
+		--logo-src: url('/logo-slim-light.png');
 	}
 
 	:root.dark {
@@ -56,6 +57,11 @@
 		--theme-accent: 197deg 63% 59%;
 		--theme-accent-2: 0deg 0% 93%;
 		--theme-quote: 102deg 100% 86%;
+		--logo-src: url('/logo-slim-dark.png');
+	}
+
+	#header-logo {
+		content: var(--logo-src);
 	}
 
 	html {
