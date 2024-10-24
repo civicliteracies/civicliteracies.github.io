@@ -28,8 +28,8 @@
 	:root {
 		color-scheme: light;
 		/* bg */
-		/* --theme-bg: 0deg 0% 88%; */
-		--theme-bg: 30deg 40% 87%;
+		--theme-bg: 0deg 0% 99%;
+		/* --theme-bg: 30deg 40% 87%; */
 		/* --theme-bg: 30deg 100% 99%; */
 		/* links, underlines */
 		--theme-link: 235deg 79% 62%;
