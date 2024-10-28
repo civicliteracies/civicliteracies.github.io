@@ -4,6 +4,11 @@
 
 /* https://tailwindcss.com/docs/customizing-colors#using-css-variables */
 
+@font-face {
+	font-family: 'Geist';
+	src: url(./fonts/Geist-Regular.woff2) format('woff');
+}
+
 @layer base {
 	/* :root {
 		color-scheme: light;
@@ -71,6 +76,8 @@
 	html body {
 		/* @apply mx-auto flex min-h-screen max-w-3xl flex-col bg-bgColor px-8 pt-16 font-mono text-sm font-normal text-textColor antialiased; */
 		@apply mx-auto flex min-h-screen max-w-3xl flex-col bg-bgColor px-8 pt-16 font-mono font-normal text-textColor antialiased;
+		font-family: Geist, system-ui, sans-serif;
+		font-size: large;
 	}
 
 	/* p {
@@ -96,8 +103,32 @@
 		color: #00aaf0;
 	}
 
+	.cli-color-main-blue :hover {
+		color: #00aaf0;
+	}
+
 	.cli-color-comp-grey {
 		color: #a3a3a3;
+	}
+
+	.cli-bg-main-blue {
+		background-color: #00aaf0;
+	}
+
+	.cli-bg-main-blue :hover {
+		color: #0054f0;
+	}
+
+	.cli-bg-comp-grey {
+		color: #303030;
+	}
+
+	.cli-bg-comp-grey :hover {
+		color: #afafaf;
+	}
+
+	.text-white {
+		color: white;
 	}
 
 	.cli-highlight {
@@ -110,7 +141,7 @@
 
 	.cli-prompt {
 		/* color: #303030; */
-		font-weight: 600;
+		font-weight: 200;
 		/* background-color: #505eeb00; */
 	}
 
@@ -226,40 +257,45 @@
 	}
 
 	.cli-heading {
-		font-size: 1.8rem;
+		font-size: 2.2rem;
 		font-weight: 700;
-		line-height: 2rem;
+		line-height: 2.2rem;
 
 		@media (max-width: 769px) {
-			font-size: 1.5rem;
+			font-size: 1.8rem;
 			line-height: 1.8rem;
 
 		}
 
 		@media (max-width: 426px) {
-			font-size: 1.35rem;
+			font-size: 1.5rem;
 
 		}
 	}
 
 	.cli-word-slider {
 		color: #00aaf0;
-		font-size: 2rem;
+		font-size: 2.2rem;
 		font-weight: 700;
+		line-height: 2.2rem;
 
 		@media (max-width: 769px) {
-			font-size: 1.65rem;
+			font-size: 1.8rem;
 			line-height: 1.8rem;
 		}
 
 		@media (max-width: 426px) {
-			font-size: 1.4rem;
+			font-size: 1.5rem;
 
 		}
 	}
 
 	.mb-28 {
 		margin-bottom: 2.5rem !important;
+	}
+
+	.mb-14 {
+		margin-bottom: 1.25rem !important;
 	}
 
 	.mb-3rem {
