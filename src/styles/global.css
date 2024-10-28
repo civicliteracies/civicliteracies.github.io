@@ -339,7 +339,7 @@
 		font-size: 3rem !important;
 	} */
 
-	form.contact-cli input[type="text"], form.contact-cli input[type="email"], form.contact-cli textarea {
+	/* form.contact-cli input[type="text"], form.contact-cli input[type="email"], form.contact-cli textarea {
 		width: 100%;
 		vertical-align: middle;
 		margin-top: 0.25em;
@@ -352,11 +352,10 @@
 		border-style: solid;
 		border-width: 1px;
 		border-color: #505eeb;
-		/* outline-color: #505eeb; */
 		transition: box-shadow .2s ease;
-	}
+	} */
 
-	form.contact-cli label {
+	/* form.contact-cli label {
 		font-size: 0.8em;
 		font-weight: 500;
 		margin-top: 0.2em;
@@ -364,7 +363,7 @@
 
 	form.contact-cli textarea {
 		height: 180px;
-	}
+	} */
 
 	.cli-btn {
 		background-color: #505eeb; /* Button background color */
