@@ -1,22 +1,25 @@
 ---
 import PageLayout from "@/layouts/Base";
+import LinkButton from "@/components/LinkButton";
 ---
 
 <PageLayout meta={{ title: "Home" }}>
 	<section>
 		<div class="cli-container">
-            <div class="cli-row mb-28">
-                <span class="cli-heading">Capacity-building <span class="cli-word-slider">
-                    <span style="display: inline-block">with care</span>
-                    <span style="display: none">with accountability</span>
-                    <span style="display: none">with visibility</span>
-                    <span style="display: none">with collaboration</span>
-                    <span style="display: none">with lasting impact</span>
-                    <span style="display: none">reinvented</span>
-                </span></span>
-            </div>
-            
 			<div class="cli-row">
+				<span class="cli-heading"
+					>Capacity-building <span class="cli-word-slider">
+						<span style="display: inline-block">with care</span>
+						<span style="display: none">with accountability</span>
+						<span style="display: none">with visibility</span>
+						<span style="display: none">with collaboration</span>
+						<span style="display: none">with lasting impact</span>
+						<span style="display: none">reinvented</span>
+					</span></span
+				>
+			</div>
+
+			<!-- <div class="cli-row">
 				<p class="cli-text">
 					<span>hello@civicliteraci.es</span>:<span class="cli-color-comp-light-purple">~</span>$ <span
 						style="opacity: 50%">info cli</span>
@@ -89,47 +92,160 @@ import PageLayout from "@/layouts/Base";
 					</div>
 					</p>
 				</div>
+			</div> -->
+		</div>
+	</section>
+	<section class="mb-28">
+		<div class="mb-14">We are reinventing capacity-building for civic organisations. Join us.</div>
+		<div class="mb-14 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+			<a 
+			  href="#" 
+			  class="px-6 py-2 rounded-md bg-blue-500 text-white 
+					 hover:bg-blue-600 transition-colors duration-300 text-center"
+			>
+			  Get a free consultation
+			</a>
+			<a 
+			  href="#" 
+			  class="px-6 py-2 rounded-md bg-gray-700 text-white 
+					 hover:bg-gray-600 transition-colors duration-300 text-center"
+			>
+			  Hire a trainer
+			</a>
+		</div>	
+	</section>
+	<section>
+		<div class="mb-28">
+			<p class="cli-prompt cli-color-comp-grey mb-14">$cli mission</p>
+			<div class="rounded-lg bg-gray-400/10 p-6 shadow-sm">
+				<!-- <h2 class="font-semibold text-gray-800 mb-2">Box Title</h2> -->
+				<p class="mb-14">
+					We can do better than spreadsheets and PDF reports. But to do better, we need to rethink
+					what individual and organizational capacity-building looks like. We made it our mission to
+					do so.
+				</p>
+				<div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+					<a 
+					  href="#" 
+					  class="px-6 py-2 rounded-md bg-blue-500 text-white 
+							 hover:bg-blue-600 transition-colors duration-300 text-center"
+					>
+					  Learn more
+					</a>
+				</div>	
 			</div>
+		</div>
+	</section>
+	<section>
+		<div class="mb-28">
+			<p class="cli-prompt cli-color-comp-grey mb-14">$cli services</p>
+			<div class="mb-14 rounded-lg bg-gray-400/10 p-6 shadow-sm">
+				<h2 class="cli-color-main-blue mb-2 font-semibold">Go Beyond the spreadsheet. Fast.</h2>
+				<p class="mb-14">
+					Our Datasette-based service helps CSOs easily manage data, generate APIs, and build
+					interactive data-driven products. Go beyond spreadsheets and unlock the full potential of
+					your information.
+				</p>
+				<div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+					<a 
+					  href="#" 
+					  class="px-6 py-2 rounded-md bg-blue-500 text-white 
+							 hover:bg-blue-600 transition-colors duration-300 text-center"
+					>
+					  Learn more
+					</a>
+					<a 
+					  href="#" 
+					  class="px-6 py-2 rounded-md bg-gray-700 text-white 
+							 hover:bg-gray-600 transition-colors duration-300 text-center"
+					>
+					  Get a free consultation
+					</a>
+				</div>
+			</div>
+			<div class="rounded-lg bg-gray-400/10 p-6 shadow-sm">
+				<h2 class="cli-color-main-blue mb-2 font-semibold">Learn data skills. At scale.</h2>
+				<p class="mb-14">
+					Our open training data platform enables standardized training, collaborative learning, and
+					data-driven improvement. Transform your training programs and scale your impact across
+					your organization.
+				</p>
+				<div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+					<a 
+					  href="#" 
+					  class="px-6 py-2 rounded-md bg-blue-500 text-white 
+							 hover:bg-blue-600 transition-colors duration-300 text-center"
+					>
+					  Learn more
+					</a>
+					<a 
+					  href="#" 
+					  class="px-6 py-2 rounded-md bg-gray-700 text-white 
+							 hover:bg-gray-600 transition-colors duration-300 text-center"
+					>
+					  Hire a trainer
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section>
+		<div class="mb-28">
+			<p class="cli-prompt cli-color-comp-grey mb-14">$cli get-involved</p>
+			<p class="mb-14">Follow our journey toward better capacity-building for civic actors.</p>
+			<div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+				<a 
+				  href="#" 
+				  class="px-6 py-2 rounded-md bg-blue-500 text-white 
+						 hover:bg-blue-600 transition-colors duration-300 text-center"
+				>
+				  Join our newsletter
+				</a>
+				<a 
+				  href="#" 
+				  class="px-6 py-2 rounded-md bg-gray-700 text-white 
+						 hover:bg-gray-600 transition-colors duration-300 text-center"
+				>
+				  Get a free consultation
+				</a>
+			</div>			  
 		</div>
 	</section>
 </PageLayout>
 
 <script>
-    const wordSlider = document.querySelector('.cli-word-slider');
-    const options = wordSlider.querySelectorAll('span');
-    let currentIndex = 0;
+	const wordSlider = document.querySelector(".cli-word-slider");
+	const options = wordSlider.querySelectorAll("span");
+	let currentIndex = 0;
 
-    setInterval(() => {
-        options[currentIndex].style.display = 'none';
-        currentIndex = (currentIndex + 1) % options.length;
-        options[currentIndex].style.display = 'inline-block';
-    }, 4000); // Change every 2.5 seconds (adjust as needed)
-
+	setInterval(() => {
+		options[currentIndex].style.display = "none";
+		currentIndex = (currentIndex + 1) % options.length;
+		options[currentIndex].style.display = "inline-block";
+	}, 4000); // Change every 2.5 seconds (adjust as needed)
 </script>
 
 <script>
-document.getElementById("toggle-contact").addEventListener("click", function (event) {
-    event.preventDefault(); // Prevent the link from navigating
+	document.getElementById("toggle-contact").addEventListener("click", function (event) {
+		event.preventDefault(); // Prevent the link from navigating
 
-	var newsletterDiv = document.getElementById("newsletter");
-    newsletterDiv.classList.add("hidden");
-    var contactDiv = document.getElementById("contact");
-    contactDiv.classList.toggle("hidden");
-});
+		var newsletterDiv = document.getElementById("newsletter");
+		newsletterDiv.classList.add("hidden");
+		var contactDiv = document.getElementById("contact");
+		contactDiv.classList.toggle("hidden");
+	});
 
-document.getElementById("toggle-newsletter").addEventListener("click", function (event) {
-    event.preventDefault(); // Prevent the link from navigating
+	document.getElementById("toggle-newsletter").addEventListener("click", function (event) {
+		event.preventDefault(); // Prevent the link from navigating
 
-    var newsletterDiv = document.getElementById("newsletter");
-    newsletterDiv.classList.toggle("hidden");
-	var contactDiv = document.getElementById("contact");
-    contactDiv.classList.add("hidden");
-})
-
-<script>
-window.onbeforeunload = () => {
-  for(const form of document.getElementsByClassName('contact-cli')) {
-    form.reset();
-  }
-}
+		var newsletterDiv = document.getElementById("newsletter");
+		newsletterDiv.classList.toggle("hidden");
+		var contactDiv = document.getElementById("contact");
+		contactDiv.classList.add("hidden");
+	})<script>;
+	window.onbeforeunload = () => {
+		for (const form of document.getElementsByClassName("contact-cli")) {
+			form.reset();
+		}
+	};
 </script>
