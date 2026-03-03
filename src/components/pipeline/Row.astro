@@ -1,0 +1,18 @@
+---
+interface Props {
+	prompt: string;
+	dimPrompt?: boolean;
+	style?: string;
+}
+
+const { prompt, dimPrompt = false, style } = Astro.props;
+---
+
+<div class="cli-row" style={style}>
+	<div class="cli-col1">
+		<span class="cli-prompt" style={dimPrompt ? "opacity: 0.5;" : undefined}>{prompt}</span>
+	</div>
+	<div class="cli-col2">
+		<slot />
+	</div>
+</div>

@@ -1,0 +1,16 @@
+---
+interface Props {
+	steps: { id: string; label: string }[];
+}
+
+const { steps } = Astro.props;
+---
+
+<nav class="pipeline-step-bar" aria-label="Pipeline steps">
+	{steps.map((step, i) => (
+		<>
+			<a href={`#${step.id}`} class="pipeline-pill" data-step={step.id}>{step.label}</a>
+			{i < steps.length - 1 && <span class="pipeline-arrow" aria-hidden="true">→</span>}
+		</>
+	))}
+</nav>

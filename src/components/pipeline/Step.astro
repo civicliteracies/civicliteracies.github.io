@@ -1,0 +1,19 @@
+---
+interface Props {
+	num: number;
+	id: string;
+	title: string;
+}
+
+const { num, id, title } = Astro.props;
+---
+
+<div class="cli-row" id={id} style="scroll-margin-top: 5rem;">
+	<div class="cli-col1">
+		<span class="pipeline-step-num">{num}</span>
+	</div>
+	<div class="cli-col2">
+		<h2 style="margin: 0 0 0.3em 0; font-size: 1.3rem; font-weight: 700;">{title}</h2>
+		<slot />
+	</div>
+</div>

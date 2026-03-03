@@ -342,4 +342,145 @@
     background-color: #00aaf0; /* Change background color on hover */
 	}
 
+	/* Data Pipeline page */
+	.pipeline-step-bar {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.4em;
+		padding: 1.5em 0 2.5em calc(14% - 1.5em);
+		margin: 0;
+		width: 100%;
+		position: sticky;
+		top: 0;
+		z-index: 10;
+		background-color: hsl(var(--theme-bg));
+		border-bottom: 1px solid transparent;
+	}
+
+	.pipeline-step-bar.is-stuck {
+		border-bottom-color: rgba(80, 94, 235, 0.25);
+	}
+
+	.pipeline-pill {
+		background-color: #505eeb;
+		color: #fff;
+		padding: 0.35em 0.9em;
+		border-radius: 999px;
+		font-size: 0.8em;
+		font-weight: 600;
+		text-decoration: none;
+		white-space: nowrap;
+		transition: background-color 0.2s;
+	}
+
+	.pipeline-pill:hover {
+		background-color: #00aaf0;
+	}
+
+	.pipeline-pill.is-active {
+		background-color: #00aaf0;
+	}
+
+	.pipeline-arrow {
+		color: #505eeb;
+		font-weight: 700;
+		font-size: 0.9em;
+	}
+
+	:root.dark .pipeline-arrow {
+		color: #7b86f0;
+	}
+
+	.pipeline-step-num {
+		font-size: 2rem;
+		font-weight: 700;
+		color: #505eeb;
+		line-height: 1;
+	}
+
+	:root.dark .pipeline-step-num {
+		color: #7b86f0;
+	}
+
+	.pipeline-details summary {
+		color: #00aaf0;
+		cursor: pointer;
+		font-weight: 600;
+		padding: 0.3em 0;
+		list-style: none;
+	}
+
+	.pipeline-details summary::before {
+		content: "▸ ";
+	}
+
+	.pipeline-details[open] summary::before {
+		content: "▾ ";
+	}
+
+	.pipeline-details summary::-webkit-details-marker {
+		display: none;
+	}
+
+	.pipeline-details[open] > :not(summary) {
+		border-left: 3px solid #505eeb;
+		margin-left: 0.2em;
+		padding-left: 1em;
+	}
+
+	.pipeline-details table {
+		width: 100%;
+		border-collapse: collapse;
+		margin: 0.75em 0;
+		font-size: 0.9em;
+	}
+
+	.pipeline-details th,
+	.pipeline-details td {
+		border: 1px solid #d1d5db;
+		padding: 0.4em 0.6em;
+		text-align: left;
+	}
+
+	:root.dark .pipeline-details th,
+	:root.dark .pipeline-details td {
+		border-color: #374151;
+	}
+
+	.pipeline-details th {
+		font-weight: 600;
+		background-color: rgba(80, 94, 235, 0.08);
+	}
+
+	:root.dark .pipeline-details th {
+		background-color: rgba(80, 94, 235, 0.15);
+	}
+
+}
+
+/* Pipeline overrides — outside @layer so they aren't dropped by Tailwind */
+p.pipeline-subtitle {
+	opacity: 0.5;
+	margin-bottom: 1.2em;
+}
+
+.cli-col2 p + p {
+	margin-top: 0.6em;
+}
+
+.cli-col2 h2 {
+	margin: 0 0 0.5em 0;
+	font-size: 1.3rem;
+	font-weight: 700;
+}
+
+.cli-col2 h3 {
+	margin: 1em 0 0.3em 0;
+	font-size: 1.1rem;
+	font-weight: 700;
+}
+
+.cli-col2 h3 + p {
+	margin-top: 0;
 }

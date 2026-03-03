@@ -1,0 +1,57 @@
+---
+import Base from "./Base.astro";
+
+const { frontmatter } = Astro.props;
+const meta = {
+	title: frontmatter.title,
+	description: frontmatter.description,
+};
+---
+
+<Base meta={meta}>
+	<section>
+		<div class="cli-container">
+			<div class="cli-row mb-28">
+				<span class="cli-heading">The Data Pipeline</span>
+			</div>
+			<slot />
+		</div>
+	</section>
+</Base>
+
+<script>
+	const bar = document.querySelector('.pipeline-step-bar');
+	if (bar) {
+		const sentinel = document.createElement('div');
+		bar.parentNode!.insertBefore(sentinel, bar);
+
+		const stickyObserver = new IntersectionObserver(
+			([e]) => bar.classList.toggle('is-stuck', !e.isIntersecting),
+			{ threshold: 1 }
+		);
+		stickyObserver.observe(sentinel);
+
+		const pills = bar.querySelectorAll<HTMLAnchorElement>('.pipeline-pill[data-step]');
+		const stepIds = Array.from(pills).map(p => p.dataset.step!);
+		const sections = stepIds.map(id => document.getElementById(id)).filter(Boolean) as HTMLElement[];
+
+		function updateActivePill() {
+			const isStuck = bar.classList.contains('is-stuck');
+			if (!isStuck) {
+				pills.forEach(p => p.classList.remove('is-active'));
+				return;
+			}
+			const barBottom = bar.getBoundingClientRect().bottom + 20;
+			let activeId = '';
+			for (const section of sections) {
+				if (section.getBoundingClientRect().top <= barBottom) {
+					activeId = section.id;
+				}
+			}
+			pills.forEach(p => p.classList.toggle('is-active', p.dataset.step === activeId));
+		}
+
+		window.addEventListener('scroll', updateActivePill, { passive: true });
+		updateActivePill();
+	}
+</script>
