@@ -12,9 +12,9 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 
 <PageLayout meta={{ title: "Blog" }}>
 	<section>
-		<h1 class="title mb-6"><span class="cli-color-main-blue">echo</span> "Hello, World!"</h1>
-		<p class="mb-4">
-			Hi! We are CLI.
+		<h1 class="title mb-6"><span class="cli-color-main-blue">echo</span> <span id="var-name">$greetings</span></h1>
+		<p class="mb-4" id="var-text">
+			Hi! We are CLi.
 		</p>
 		<SocialList />
 	</section>
@@ -31,3 +31,16 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 		</ul>
 	</section>
 </PageLayout>
+
+<script>
+	const pairs = [
+		{ var: "$greetings", text: "Hi! We are CLi." },
+		{ var: "$mission", text: "We build civic data tools." },
+		{ var: "$approach", text: "Capacity-building with care." },
+		{ var: "$focus", text: "Open data for civic impact." },
+	];
+
+	const pick = pairs[Math.floor(Math.random() * pairs.length)];
+	document.getElementById("var-name").textContent = pick.var;
+	document.getElementById("var-text").textContent = pick.text;
+</script>
