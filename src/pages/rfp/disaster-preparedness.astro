@@ -1,0 +1,203 @@
+---
+import PageLayout from "@/layouts/Base";
+
+const meta = {
+	title: "RFP: Disaster Preparedness",
+	description: "Request for Proposals — Strengthening Community-Level Disaster Preparedness in Climate-Vulnerable Regions",
+};
+---
+
+<PageLayout meta={meta}>
+	<section>
+		<div class="cli-container">
+			<div class="cli-row mb-28">
+				<span class="cli-heading">Call for Proposals</span>
+			</div>
+
+			<div class="cli-row">
+				<p class="cli-text">
+					<span>rfp@civicliteraci.es</span>:<span class="cli-color-comp-light-purple">~</span>$ <span
+						style="opacity: 50%">cat rfp --summary</span>
+				</p>
+			</div>
+
+			<div class="cli-row">
+				<div class="cli-col1">
+					<span class="cli-prompt">title</span>
+				</div>
+				<div class="cli-col2">
+					<p>
+						<strong>Strengthening Community-Level Disaster Preparedness in Climate-Vulnerable Regions</strong>
+					</p>
+				</div>
+			</div>
+
+			<div class="cli-row">
+				<div class="cli-col1">
+					<span class="cli-prompt">about</span>
+				</div>
+				<div class="cli-col2">
+					<p>
+						Climate-related disasters disproportionately affect communities with limited access to health facilities, emergency shelters, and transport infrastructure. While national-level risk assessments exist, they lack the granularity needed to inform preparedness planning at the community level.
+					</p>
+					<p>
+						This RFP seeks proposals for a project that would strengthen CLI's ability to anticipate and prepare for climate-related disasters at the community level, complementing field staff expertise with <span class="cli-highlight">data-driven approaches</span> and <span class="cli-highlight">AI tools</span>.
+					</p>
+				</div>
+			</div>
+
+			<div class="cli-row">
+				<div class="cli-col1">
+					<span class="cli-prompt">scope</span>
+				</div>
+				<div class="cli-col2">
+					<p>Proposals should address:</p>
+					<ul class="rfp-list">
+						<li><strong>Preparedness assessment</strong> — confirm and complement field-level expertise on community vulnerability using data</li>
+						<li><strong>Methodology</strong> — how data supports and enriches existing assessments</li>
+						<li><strong>Use of AI</strong> — how AI tools improve efficiency, monitoring, or scalability</li>
+						<li><strong>Adaptability</strong> — how the approach transfers to other regions</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="cli-row">
+				<div class="cli-col1">
+					<span class="cli-prompt">criteria</span>
+				</div>
+				<div class="cli-col2">
+					<ul class="rfp-list">
+						<li><strong>Relevance and innovation</strong> — alignment with objectives and quality of approach</li>
+						<li><strong>Data-driven approach</strong> — effective use of data to identify needs</li>
+						<li><strong>Use of technology</strong> — clarity and realism of AI integration</li>
+						<li><strong>Feasibility and impact</strong> — practicality and potential impact</li>
+						<li><strong>Scalability</strong> — potential for application in other regions</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="cli-row">
+				<div class="cli-col1">
+					<span class="cli-prompt">dates</span>
+				</div>
+				<div class="cli-col2">
+					<table class="rfp-timeline">
+						<tbody>
+							<tr>
+								<td>RFP issued</td>
+								<td>April 21, 2026</td>
+							</tr>
+							<tr>
+								<td>Questions accepted until</td>
+								<td>April 25, 2026</td>
+							</tr>
+							<tr class="rfp-deadline">
+								<td>Submission deadline</td>
+								<td>May 16, 2026</td>
+							</tr>
+							<tr>
+								<td>Evaluation period</td>
+								<td>May 18 — June 15, 2026</td>
+							</tr>
+							<tr>
+								<td>Award notification</td>
+								<td>June 2026</td>
+							</tr>
+							<tr>
+								<td>Project start</td>
+								<td>September 2026</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="cli-row">
+				<div class="cli-col1">
+					<span class="cli-prompt">submit</span>
+				</div>
+				<div class="cli-col2">
+					<p>
+						Proposals should be submitted electronically to <a class="cactus-link" href="mailto:rfp@civicliteraci.es">rfp@civicliteraci.es</a> by <strong>May 16th, 2026</strong>.
+					</p>
+					<p>
+						Questions: <a class="cactus-link" href="mailto:cedric@civicliteraci.es">cedric@civicliteraci.es</a>
+					</p>
+				</div>
+			</div>
+
+			<div class="cli-row" style="margin-top: 1em;">
+				<div class="cli-col1"></div>
+				<div class="cli-col2">
+					<a href="/pdf/CLI-RFP-Disaster-Preparedness-2026.pdf" class="rfp-download-btn" download>
+						Download full RFP (PDF)
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</PageLayout>
+
+<style>
+	.rfp-list {
+		list-style: none;
+		padding-left: 0;
+		margin: 0.3em 0 0 0;
+	}
+
+	.rfp-list li {
+		position: relative;
+		padding-left: 1.2em;
+		margin-bottom: 0.5em;
+		font-family: Roboto, sans-serif;
+	}
+
+	.rfp-list li::before {
+		content: ">";
+		position: absolute;
+		left: 0;
+		font-weight: 700;
+		color: hsl(197deg 63% 59%);
+	}
+
+	.rfp-timeline {
+		width: 100%;
+		border-collapse: collapse;
+		font-family: Roboto, sans-serif;
+		margin: 0.3em 0;
+	}
+
+	.rfp-timeline td {
+		padding: 0.4em 0.8em;
+		border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+	}
+
+	.rfp-timeline td:first-child {
+		width: 55%;
+	}
+
+	.rfp-timeline td:last-child {
+		font-weight: 600;
+	}
+
+	.rfp-deadline td {
+		color: hsl(197deg 63% 49%);
+		font-weight: 600;
+	}
+
+	.rfp-download-btn {
+		display: inline-block;
+		background-color: #505eeb;
+		color: #fff;
+		padding: 0.7em 1.5em;
+		border-radius: 5px;
+		text-decoration: none;
+		font-weight: 600;
+		font-family: Roboto, sans-serif;
+		transition: background-color 0.2s;
+	}
+
+	.rfp-download-btn:hover {
+		background-color: #00aaf0;
+	}
+</style>
