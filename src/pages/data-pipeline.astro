@@ -1,0 +1,12 @@
+---
+import { getEntry, render } from "astro:content";
+import DataPipeline from "@/layouts/DataPipeline";
+
+const entry = await getEntry("page", "data-pipeline");
+if (!entry) throw new Error("Missing 'data-pipeline' entry in 'page' collection");
+const { Content, headings } = await render(entry);
+---
+
+<DataPipeline frontmatter={entry.data} headings={headings}>
+	<Content />
+</DataPipeline>

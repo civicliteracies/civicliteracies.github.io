@@ -1,6 +1,7 @@
 import { defineConfig } from "astro/config";
 import fs from "fs";
 import mdx from "@astrojs/mdx";
+import markdoc from "@astrojs/markdoc";
 import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
 import icon from "astro-icon";
@@ -23,6 +24,7 @@ export default defineConfig({
 	},
 	integrations: [
 		mdx({}),
+		markdoc({ allowHTML: true }),
 		sitemap(),
 		icon(),
 	],
