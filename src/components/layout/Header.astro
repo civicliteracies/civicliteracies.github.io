@@ -7,7 +7,7 @@ const url = new URL(Astro.request.url);
 ---
 
 <script>
-	import { toggleClass } from "@/utils";
+	import { toggleClass } from "../../utils/domElement";
 	let headerEl: HTMLElement;
 	let menuButtonEl: HTMLButtonElement;
 	let menuOpen = false;

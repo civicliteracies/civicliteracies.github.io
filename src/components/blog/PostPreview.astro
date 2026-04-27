@@ -14,7 +14,7 @@ const postDate = post.data.updatedDate ?? post.data.publishDate;
 
 <FormattedDate date={postDate} class="min-w-[120px] text-gray-500" />
 <Tag>
-	<a href={`/blog/${post.slug}/`} class="cactus-link" rel="prefetch">
+	<a href={`/blog/${post.id}/`} class="cactus-link" rel="prefetch">
 		{post.data.title}
 	</a>
 </Tag>
