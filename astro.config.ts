@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config";
 import fs from "fs";
 import mdx from "@astrojs/mdx";
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
 import icon from "astro-icon";
 import remarkUnwrapImages from "remark-unwrap-images";
@@ -23,14 +23,11 @@ export default defineConfig({
 	},
 	integrations: [
 		mdx({}),
-		tailwind({
-			applyBaseStyles: false,
-		}),
 		sitemap(),
 		icon(),
 	],
 	vite: {
-		plugins: [rawFonts([".ttf"])],
+		plugins: [tailwindcss(), rawFonts([".ttf"])],
 		optimizeDeps: {
 			exclude: ["@resvg/resvg-js"],
 		},
