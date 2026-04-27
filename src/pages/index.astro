@@ -96,40 +96,43 @@ import PageLayout from "@/layouts/Base";
 
 <script>
     const wordSlider = document.querySelector('.cli-word-slider');
-    const options = wordSlider.querySelectorAll('span');
-    let currentIndex = 0;
+    if (wordSlider) {
+        const options = wordSlider.querySelectorAll<HTMLSpanElement>('span');
+        let currentIndex = 0;
 
-    setInterval(() => {
-        options[currentIndex].style.display = 'none';
-        currentIndex = (currentIndex + 1) % options.length;
-        options[currentIndex].style.display = 'inline-block';
-    }, 4000); // Change every 2.5 seconds (adjust as needed)
-
+        setInterval(() => {
+            const cur = options[currentIndex];
+            if (cur) cur.style.display = 'none';
+            currentIndex = (currentIndex + 1) % options.length;
+            const next = options[currentIndex];
+            if (next) next.style.display = 'inline-block';
+        }, 4000);
+    }
 </script>
 
 <script>
-document.getElementById("toggle-contact").addEventListener("click", function (event) {
-    event.preventDefault(); // Prevent the link from navigating
+    const toggleContact = document.getElementById("toggle-contact");
+    const toggleNewsletter = document.getElementById("toggle-newsletter");
+    const newsletterDiv = document.getElementById("newsletter");
+    const contactDiv = document.getElementById("contact");
 
-	var newsletterDiv = document.getElementById("newsletter");
-    newsletterDiv.classList.add("hidden");
-    var contactDiv = document.getElementById("contact");
-    contactDiv.classList.toggle("hidden");
-});
+    toggleContact?.addEventListener("click", (event) => {
+        event.preventDefault();
+        newsletterDiv?.classList.add("hidden");
+        contactDiv?.classList.toggle("hidden");
+    });
 
-document.getElementById("toggle-newsletter").addEventListener("click", function (event) {
-    event.preventDefault(); // Prevent the link from navigating
-
-    var newsletterDiv = document.getElementById("newsletter");
-    newsletterDiv.classList.toggle("hidden");
-	var contactDiv = document.getElementById("contact");
-    contactDiv.classList.add("hidden");
-})
+    toggleNewsletter?.addEventListener("click", (event) => {
+        event.preventDefault();
+        newsletterDiv?.classList.toggle("hidden");
+        contactDiv?.classList.add("hidden");
+    });
+</script>
 
 <script>
-window.onbeforeunload = () => {
-  for(const form of document.getElementsByClassName('contact-cli')) {
-    form.reset();
-  }
-}
+    window.onbeforeunload = () => {
+        for (const form of document.getElementsByClassName('contact-cli')) {
+            (form as HTMLFormElement).reset();
+        }
+    };
 </script>

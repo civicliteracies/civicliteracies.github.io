@@ -20,28 +20,32 @@ const meta = {
 </Base>
 
 <script>
-	const bar = document.querySelector('.pipeline-step-bar');
-	if (bar) {
+	const stepBar = document.querySelector('.pipeline-step-bar');
+	if (stepBar) {
 		const sentinel = document.createElement('div');
-		bar.parentNode!.insertBefore(sentinel, bar);
+		stepBar.parentNode!.insertBefore(sentinel, stepBar);
 
 		const stickyObserver = new IntersectionObserver(
-			([e]) => bar.classList.toggle('is-stuck', !e.isIntersecting),
+			(entries) => {
+				const e = entries[0];
+				if (!e) return;
+				stepBar.classList.toggle('is-stuck', !e.isIntersecting);
+			},
 			{ threshold: 1 }
 		);
 		stickyObserver.observe(sentinel);
 
-		const pills = bar.querySelectorAll<HTMLAnchorElement>('.pipeline-pill[data-step]');
+		const pills = stepBar.querySelectorAll<HTMLAnchorElement>('.pipeline-pill[data-step]');
 		const stepIds = Array.from(pills).map(p => p.dataset.step!);
 		const sections = stepIds.map(id => document.getElementById(id)).filter(Boolean) as HTMLElement[];
 
 		function updateActivePill() {
-			const isStuck = bar.classList.contains('is-stuck');
+			const isStuck = stepBar!.classList.contains('is-stuck');
 			if (!isStuck) {
 				pills.forEach(p => p.classList.remove('is-active'));
 				return;
 			}
-			const barBottom = bar.getBoundingClientRect().bottom + 20;
+			const barBottom = stepBar!.getBoundingClientRect().bottom + 20;
 			let activeId = '';
 			for (const section of sections) {
 				if (section.getBoundingClientRect().top <= barBottom) {
