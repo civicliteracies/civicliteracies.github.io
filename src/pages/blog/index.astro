@@ -41,6 +41,10 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 	];
 
 	const pick = pairs[Math.floor(Math.random() * pairs.length)];
-	document.getElementById("var-name").textContent = pick.var;
-	document.getElementById("var-text").textContent = pick.text;
+	if (pick) {
+		const nameEl = document.getElementById("var-name");
+		const textEl = document.getElementById("var-text");
+		if (nameEl) nameEl.textContent = pick.var;
+		if (textEl) textEl.textContent = pick.text;
+	}
 </script>

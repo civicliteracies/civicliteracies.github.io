@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import { render } from "astro:content";
 
 import BaseLayout from "./Base.astro";
 import BlogHero from "@/components/blog/Hero";
@@ -12,11 +13,11 @@ interface Props {
 const { post } = Astro.props;
 const {
 	data: { title, description, ogImage, publishDate, updatedDate },
-	slug,
+	id,
 } = post;
-const socialImage = ogImage ?? `/og-image/${slug}.png`;
+const socialImage = ogImage ?? `/og-image/${id}.png`;
 const articleDate = updatedDate?.toISOString() ?? publishDate.toISOString();
-const { headings } = await post.render();
+const { headings } = await render(post);
 ---
 
 <script>
@@ -41,7 +42,7 @@ const { headings } = await post.render();
 <BaseLayout meta={{ title, description, articleDate, ogImage: socialImage }}>
 	<div class="gap-x-10 lg:flex lg:items-start">
 		{!!headings.length && <TOC headings={headings} />}
-		<article class="flex-grow break-words" data-pagefind-body>
+		<article class="grow wrap-break-word" data-pagefind-body>
 			<div id="blog-hero"><BlogHero content={post} /></div>
 			<div
 				class="prose prose-sm prose-cactus mt-12 prose-headings:font-semibold prose-headings:text-accent-2 prose-th:before:content-none"
@@ -52,7 +53,7 @@ const { headings } = await post.render();
 	</div>
 	<button
 		id="to-top-btn"
-		class="z-90 fixed bottom-8 end-4 flex h-10 w-10 translate-y-28 items-center justify-center rounded-full border-2 border-transparent bg-zinc-200 text-3xl opacity-0 transition-all duration-300 hover:border-zinc-400 data-[show=true]:translate-y-0 data-[show=true]:opacity-100 dark:bg-zinc-700 sm:end-8 sm:h-12 sm:w-12"
+		class="z-90 fixed bottom-8 inset-e-4 flex h-10 w-10 translate-y-28 items-center justify-center rounded-full border-2 border-transparent bg-zinc-200 text-3xl opacity-0 transition-all duration-300 hover:border-zinc-400 data-[show=true]:translate-y-0 data-[show=true]:opacity-100 dark:bg-zinc-700 sm:inset-e-8 sm:h-12 sm:w-12"
 		aria-label="Back to Top"
 		data-show="false"
 		><svg

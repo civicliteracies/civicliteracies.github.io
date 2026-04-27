@@ -1,6 +1,122 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@custom-variant dark (&:where(:root.dark, :root.dark *));
+
+@theme {
+	--color-bgColor: hsl(var(--theme-bg));
+	--color-textColor: hsl(var(--theme-text));
+	--color-link: hsl(var(--theme-link));
+	--color-accent: hsl(var(--theme-accent));
+	--color-accent-2: hsl(var(--theme-accent-2));
+	--color-quote: hsl(var(--theme-quote));
+}
+
+/*
+  Tailwind v4's default border color is `currentcolor`. v3 defaulted to gray-200.
+  Compat layer preserves prior visual behaviour for unscoped `border` classes.
+*/
+@layer base {
+	*,
+	::after,
+	::before,
+	::backdrop,
+	::file-selector-button {
+		border-color: var(--color-gray-200, currentcolor);
+	}
+}
+
+@layer components {
+	.cactus-link {
+		@apply bg-[size:100%_6px] bg-bottom bg-repeat-x;
+		background-image: linear-gradient(transparent, transparent 5px, hsl(var(--theme-text)) 5px, hsl(var(--theme-text)));
+	}
+	.cactus-link:hover {
+		background-image: linear-gradient(transparent, transparent 4px, hsl(var(--theme-link)) 4px, hsl(var(--theme-link)));
+	}
+	.title {
+		@apply text-2xl font-semibold text-accent-2;
+	}
+
+	/* Prose customization (was theme.extend.typography.cactus + DEFAULT in tailwind.config.ts).
+	   Setting colors directly instead of via --tw-prose-* vars because in v4 the typography
+	   plugin applies its default colors at a layer that doesn't yield to var overrides. */
+	.prose-cactus,
+	.prose-cactus :where(p, ul, ol, li, blockquote, td, th, dt, dd) {
+		color: hsl(var(--theme-text));
+	}
+	.prose-cactus :where(h1, h2, h3, h4, h5, h6) {
+		color: hsl(var(--theme-accent-2));
+	}
+	.prose-cactus :where(strong, b) {
+		color: hsl(var(--theme-text));
+	}
+	.prose-cactus :where(blockquote) {
+		color: hsl(var(--theme-quote));
+	}
+	.prose-cactus :where(code, kbd) {
+		color: hsl(var(--theme-text));
+	}
+	.prose-cactus :where(hr) {
+		border-color: hsl(var(--theme-text) / 0.3);
+	}
+	.prose-cactus :where(thead th, tfoot td) {
+		border-color: hsl(var(--theme-text) / 0.3);
+	}
+	.prose a {
+		@apply bg-[size:100%_6px] bg-bottom bg-repeat-x no-underline;
+		background-image: linear-gradient(transparent, transparent 5px, hsl(var(--theme-text)) 5px, hsl(var(--theme-text)));
+	}
+	.prose a:hover {
+		background-image: linear-gradient(transparent, transparent 4px, hsl(var(--theme-link)) 4px, hsl(var(--theme-link)));
+	}
+	.prose strong {
+		font-weight: 700;
+	}
+	.prose code {
+		border: 1px dotted #666;
+		border-radius: 2px;
+	}
+	.prose blockquote {
+		border-left-width: 0;
+	}
+	.prose hr {
+		border-top-style: dashed;
+	}
+	.prose thead {
+		border-bottom-width: 0;
+	}
+	.prose thead th {
+		font-weight: 700;
+		border-bottom: 1px dashed #666;
+	}
+	.prose tbody tr {
+		border-bottom-width: 0;
+	}
+	.prose tfoot {
+		border-top: 1px dashed #666;
+	}
+	.prose sup {
+		@apply ms-0.5;
+	}
+	.prose sup a {
+		background: none;
+	}
+	.prose sup a:hover {
+		@apply text-link no-underline;
+		background: none;
+	}
+	.prose sup a::before {
+		content: '[';
+	}
+	.prose sup a::after {
+		content: ']';
+	}
+	.prose-sm code {
+		font-size: 0.875rem;
+		font-weight: 400;
+	}
+}
 
 /* https://tailwindcss.com/docs/customizing-colors#using-css-variables */
 

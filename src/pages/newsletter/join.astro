@@ -32,14 +32,17 @@ import PageLayout from "@/layouts/Base";
 
 <script>
     const wordSlider = document.querySelector('.cli-word-slider');
-    const options = wordSlider.querySelectorAll('span');
-    let currentIndex = 0;
+    if (wordSlider) {
+        const options = wordSlider.querySelectorAll<HTMLSpanElement>('span');
+        let currentIndex = 0;
 
-    setInterval(() => {
-        options[currentIndex].style.display = 'none';
-        currentIndex = (currentIndex + 1) % options.length;
-        options[currentIndex].style.display = 'inline-block';
-    }, 4000); // Change every 2.5 seconds (adjust as needed)
-
+        setInterval(() => {
+            const cur = options[currentIndex];
+            if (cur) cur.style.display = 'none';
+            currentIndex = (currentIndex + 1) % options.length;
+            const next = options[currentIndex];
+            if (next) next.style.display = 'inline-block';
+        }, 4000);
+    }
 </script>
 
