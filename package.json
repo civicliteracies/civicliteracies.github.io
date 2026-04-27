@@ -12,10 +12,12 @@
 		"check": "astro check"
 	},
 	"dependencies": {
+		"@astrojs/markdoc": "^1.0.4",
 		"@astrojs/mdx": "^5.0.4",
 		"@astrojs/rss": "^4.0.18",
 		"@astrojs/sitemap": "^3.7.2",
 		"@iconify-json/mdi": "^1.2.3",
+		"@markdoc/markdoc": "^0.5.7",
 		"astro": "6.1.9",
 		"astro-icon": "^1.1.5",
 		"satori": "0.10.8",

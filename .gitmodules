@@ -1,0 +1,3 @@
+[submodule "vendor/markdoc-tags"]
+	path = vendor/markdoc-tags
+	url = git@github.com:civicliteracies/markdoc-tags.git
