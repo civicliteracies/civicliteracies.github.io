@@ -149,9 +149,10 @@ Config and CI (4 files):
 
 ### PR #3: Polish + skill docs
 
-**Modify (2 files in this repo + 2 files outside repo):**
+**Modify (3 files in this repo + 2 files outside repo):**
 - `src/content/post/about-us/index.md` → renamed to `index.mdoc`
 - `src/content.config.ts` — expand `post` collection's loader pattern from `**/[^_]*.md` to `**/[^_]*.{md,mdoc}` so the renamed file is matched
+- `.github/workflows/deploy.yml` — bump `actions/checkout@v4` → `@v6` (current latest; uses Node 24 natively, ahead of the 2026-06-02 forced migration)
 - `~/.claude/skills/write-markdoc/skill.md` — append "Consuming the shared library from Astro" subsection
 - `~/.claude/skills/write-slides-build/references/migration-cheatsheet.md` — fix gotcha numbering (skips from #7 to #9; renumber #9-#11 to #8-#10)
 
@@ -236,9 +237,10 @@ grep -rn "class=.*\bborder\b[^-]" src/ --include="*.astro" \
 
 - [ ] **3.1 Expand loader pattern:** `src/content.config.ts` — change `post` loader pattern from `**/[^_]*.md` to `**/[^_]*.{md,mdoc}`. Build to confirm nothing breaks (no .mdoc files yet). Commit.
 - [ ] **3.2 Migrate blog post:** `git mv src/content/post/about-us/index.md src/content/post/about-us/index.mdoc`. Build + visual diff (`/blog/about-us/` should render byte-identically). Commit.
-- [ ] **3.3 Update markdoc skill:** edit `~/.claude/skills/write-markdoc/skill.md` to add the "Consuming the shared library from Astro" subsection. Commit in dotfiles repo, not this site.
-- [ ] **3.4 Fix slides skill cheatsheet numbering:** `~/.claude/skills/write-slides-build/references/migration-cheatsheet.md` jumps from #7 to #9 — renumber. Commit in dotfiles repo.
-- [ ] **3.5 Open PR for site changes; commit dotfiles changes separately.**
+- [ ] **3.3 Bump actions/checkout:** `.github/workflows/deploy.yml` — `actions/checkout@v4` → `@v6` (no API changes; clears the Node 20 deprecation warning surfaced after PR #1's deploy). Commit.
+- [ ] **3.4 Update markdoc skill:** edit `~/.claude/skills/write-markdoc/skill.md` to add the "Consuming the shared library from Astro" subsection. Commit in dotfiles repo, not this site.
+- [ ] **3.5 Fix slides skill cheatsheet numbering:** `~/.claude/skills/write-slides-build/references/migration-cheatsheet.md` jumps from #7 to #9 — renumber. Commit in dotfiles repo.
+- [ ] **3.6 Open PR for site changes; commit dotfiles changes separately.**
 
 ## Rollback
 
